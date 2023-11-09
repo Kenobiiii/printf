@@ -6,26 +6,26 @@
 /*   By: paromero <paromero@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 10:40:37 by paromero          #+#    #+#             */
-/*   Updated: 2023/11/08 11:50:58 by paromero         ###   ########.fr       */
+/*   Updated: 2023/11/09 12:10:06 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-void	ft_funciones(char c)
+int	ft_putchar(char c)
 {
-	if (c < 65 || (c > 90 && c < 97) || c > 122)
-		write (1, &c, 1);
-	if else (
+	write (1, &c, 1);
+	return (1);
 }
 
-int main()
+void	ft_putstr(char *str)
 {
-    char *c = "%x";
-    char *d = "Buenos dias";
-    if (c == "%c")
-		write (1, d, 11);
-	else
-	    write (1, "no encontrado", 14);
-    return 0;
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		write (1, &str[i], 1);
+		i++ ;
+	}
 }
