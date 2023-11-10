@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 10:40:37 by paromero          #+#    #+#             */
-/*   Updated: 2023/11/09 12:10:06 by paromero         ###   ########.fr       */
+/*   Updated: 2023/11/10 11:41:25 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,20 @@ int	ft_putchar(char c)
 	return (1);
 }
 
-void	ft_putstr(char *str)
+int	ft_putstr(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
+	while (str[i] != '\0')
 	{
 		write (1, &str[i], 1);
-		i++ ;
+		i++;
 	}
+	return (i);
+}
+
+int	ft_putnbr(int n)
+{
+
 }
