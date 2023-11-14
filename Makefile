@@ -5,7 +5,7 @@ CC = gcc
 CCFLAGS = -Wall -Wextra -Werror
 
 NAME = libftprintf.a
-SRC =	
+SRC = ft_format.c	ft_printf.c	
 OBJ = $(SRC:.c=.o)
 INCLUDE = printf.h
 
