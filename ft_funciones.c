@@ -18,14 +18,20 @@ int	ft_putchar(char c)
 	return (1);
 }
 
-void	ft_putstr(char *str)
+int	ft_putstr(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
+	if (!str)
 	{
-		write (1, &str[i], 1);
-		i++ ;
+		write(1, "(null)", 6);
+		return (6);
 	}
+	while (*str)
+	{
+		i += ft_putchar(*str);
+		str++;
+	}
+	return (i);
 }
