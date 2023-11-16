@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 11:00:24 by paromero          #+#    #+#             */
-/*   Updated: 2023/11/08 10:37:50 by paromero         ###   ########.fr       */
+/*   Updated: 2023/11/16 11:46:47 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,9 @@
 # include <stdio.h>
 # include <string.h>
 # include <stdlib.h>
+
+int		ft_putchar(char c);
+int		ft_putstr(char *str);
+void	ft_putnbr(int n);
 
 #endif
