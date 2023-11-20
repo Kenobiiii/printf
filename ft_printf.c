@@ -6,25 +6,25 @@
 /*   By: paromero <paromero@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 10:35:24 by paromero          #+#    #+#             */
-/*   Updated: 2023/11/16 11:45:36 by paromero         ###   ########.fr       */
+/*   Updated: 2023/11/20 11:04:07 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-char	ft_format(format, arg)
+char	ft_format(char	format, va_list	arg)
 {
 	int	i;
 
 	i = 0;
 	if (format == "c")
-		i += ft_putchar(arg);
+		i += ft_putchar(va_arg(arg, int));
 	else if (format == "s")
-		i += ft_putstr(arg);
+		i += ft_putstr(va_arg(arg, char	*));
 	else if (format == "p")
 		i +=;
 	else if (format == "d")
-		i += ft_putnbr(arg);
+		i += ft_putnbr(va_arg(arg, int));
 	else if (format == "i")
 		i +=;
 	else if (format == "u")
@@ -52,8 +52,12 @@ int	ft_printf(char const *format, ...)
 	 	if (format[i] == '%')
 		{
 			i++;
-			i += ft_format(format[i], arg);
+			final += ft_format(format[i], arg);
 		}
+		else
+			write (1, format, 1);
 		i++;
 	}
+	va_end(arg);
+	return (final);
 }
