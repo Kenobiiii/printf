@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 10:40:37 by paromero          #+#    #+#             */
-/*   Updated: 2023/11/16 11:38:07 by paromero         ###   ########.fr       */
+/*   Updated: 2023/11/20 11:35:45 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,4 @@ void	ft_putnbr(int n)
 	}
 	else
 		ft_putchar(n + '0');
-}}
+}
