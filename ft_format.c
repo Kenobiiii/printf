@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_putchar(char c)
 {
@@ -56,29 +56,29 @@ int	ft_putnbr(int n)
 
 int	ft_puthex(uintptr_t n, int is_uppercase, int include_prefix)
 {
-	int		local_count;
+	int		i;
 	char	hex_digit;
 
-	local_count = 0;
+	i = 0;
 	if (n == 0)
 	{
 		if (include_prefix)
-			local_count += ft_putstr("0x");
-		return (local_count + ft_putchar('0'));
+			i += ft_putstr("0x");
+		return (i + ft_putchar('0'));
 	}
 	if (include_prefix)
-		local_count += ft_putstr("0x");
+		i += ft_putstr("0x");
 	if (n >= 16)
-		local_count += ft_puthex(n / 16, is_uppercase, 0);
+		i += ft_puthex(n / 16, is_uppercase, 0);
 	hex_digit = n % 16;
 	if (hex_digit > 9)
 	{
 		if (is_uppercase)
-			local_count += ft_putchar('A' + hex_digit - 10);
+			i += ft_putchar('A' + hex_digit - 10);
 		else
-			local_count += ft_putchar('a' + hex_digit - 10);
+			i += ft_putchar('a' + hex_digit - 10);
 	}
 	else
-		local_count += ft_putchar('0' + hex_digit);
-	return (local_count);
+		i += ft_putchar('0' + hex_digit);
+	return (i);
 }
