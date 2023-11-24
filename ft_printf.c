@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 10:35:24 by paromero          #+#    #+#             */
-/*   Updated: 2023/11/22 12:00:58 by paromero         ###   ########.fr       */
+/*   Updated: 2023/11/24 17:47:42 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	ft_printf(char const *format, ...)
 	va_start (arg, format);
 	i = 0;
 	final = 0;
-	while (*format)
+	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
@@ -55,7 +55,7 @@ int	ft_printf(char const *format, ...)
 			final += ft_format(format[i], arg);
 		}
 		else
-			write (1, format, 1);
+			final += ft_putchar(format[i]);
 		i++;
 	}
 	va_end(arg);
