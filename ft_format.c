@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 10:40:37 by paromero          #+#    #+#             */
-/*   Updated: 2023/11/22 11:35:18 by paromero         ###   ########.fr       */
+/*   Updated: 2023/11/28 11:11:07 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,21 +36,22 @@ int	ft_putstr(char *str)
 	return (i);
 }
 
-int	ft_putnbr(int n)
+int	ft_putnbr(long long n)
 {
 	int	i;
 
 	i = 0;
-	if (n == '0')
-		i += ft_putchar('0');
-	else if (n < 0)
+	if (n < 0)
 	{
 		i += ft_putchar('-');
-		ft_putnbr(-n);
+		i += ft_putnbr(-n);
 	}
-	else if (n > 9)
-		i += ft_putnbr(n / 10);
-	i += ft_putchar((n % 10) + '0');
+	else
+	{
+		if (n > 9)
+			i += ft_putnbr(n / 10);
+		i += ft_putchar((n % 10) + '0');
+	}
 	return (i);
 }
 
