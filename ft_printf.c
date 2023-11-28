@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 10:35:24 by paromero          #+#    #+#             */
-/*   Updated: 2023/11/24 17:47:42 by paromero         ###   ########.fr       */
+/*   Updated: 2023/11/28 12:08:35 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ int	ft_format(char format, va_list arg)
 	else if (format == 'u')
 		i += ft_putnbr((unsigned int)va_arg(arg, unsigned int));
 	else if (format == 'x')
-		i += ft_puthex((uintptr_t)va_arg(arg, int), 0, 0);
+		i += ft_puthex((unsigned int)va_arg(arg, int), 0, 0);
 	else if (format == 'X')
-		i += ft_puthex((uintptr_t)va_arg(arg, int), 1, 0);
+		i += ft_puthex((unsigned int)va_arg(arg, int), 1, 0);
 	else if (format == '%')
 		i += ft_putchar('%');
 	return (i);
