@@ -22,7 +22,7 @@ int	ft_format(char format, va_list arg)
 	else if (format == 's')
 		i += ft_putstr(va_arg(arg, char *));
 	else if (format == 'p')
-		i += ft_puthex((uintptr_t)va_arg(arg, int), 0, 1);
+		i += ft_puthex((uintptr_t)va_arg(arg, void *), 0, 1);
 	else if (format == 'd')
 		i += ft_putnbr(va_arg(arg, int));
 	else if (format == 'i')
