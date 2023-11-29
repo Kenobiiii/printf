@@ -1,3 +1,5 @@
+# variables
+
 LIB = ar rcs
 RM = rm -f
 
@@ -9,19 +11,32 @@ SRC = ft_format.c	ft_printf.c
 OBJ = $(SRC:.c=.o)
 INCLUDE = ft_printf.h
 
+# Colores
+#
+GREEN = \033[1;32m
+RESET = \033[0m
+
 all: $(NAME)
 
 $(NAME): $(OBJ) $(INCLUDE)
-	$(LIB) $(NAME) $(OBJ)
+	@echo "$(GREEN)Compiling objects...$(RESET)"
+	@$(LIB) $(NAME) $(OBJ)
+	@echo "$(GREEN)Library created: $(NAME)$(RESET)"
 
 %.o: %.c
-	$(CC) $(CCFLAGS) -c -o $@ $<
+	@echo "$(GREEN)Compiling $<...$(RESET)"
+	@$(CC) $(CCFLAGS) -c -o $@ $<
+	@echo "$(GREEN)$< compiled!$(RESET)"
 
 clean:
-	$(RM) $(OBJ) $(BONUS_OBJS)
+	@echo "$(GREEN)Cleaning...$(RESET)"
+	@$(RM) $(OBJ)
+	@echo "$(GREEN)Clean complete.$(RESET)"
 
 fclean: clean
-	$(RM) $(NAME)
+	@echo "$(GREEN)Deleting $(NAME)...$(RESET)"
+	@$(RM) $(NAME)
+	@echo "$(GREEN)Deleted $(NAME)$(RESET)"
 
 re: fclean all
 
